@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [userIngredients, setUserIngredients] = useState('');
+
+  const handleSearch = () => {
+    // Fetch matching recipes based on userIngredients
+    // Update user interface with matching recipes
+    // Implement this part according to your backend logic
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Recipe Search App</h1>
+      <input
+        type="text"
+        value={userIngredients}
+        onChange={(e) => setUserIngredients(e.target.value)}
+      />
+      <button onClick={handleSearch}>Search</button>
+      {/* Display matching recipes here */}
     </div>
   );
 }
